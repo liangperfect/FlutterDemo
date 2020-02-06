@@ -24,6 +24,16 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   scoped_model: ^0.3.0
+  provider: 3.0.0+1
+
+# http
+  dio: ^3.0.1
+  dio_cookie_manager: ^1.0.0
+  cookie_jar: ^1.0.0
+  shared_preferences: ^0.5.3+5
+  # 本地json对象存储
+  localstorage: ^2.0.0
+
 
 dev_dependencies:
   flutter_test:
@@ -72,7 +82,7 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
-# 圖片資源文件
+  # 圖片資源文件
   fonts:
     - family: projttf
       fonts:

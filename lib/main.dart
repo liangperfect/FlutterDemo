@@ -8,93 +8,104 @@ import 'package:flutter_app/views/SearchDemo.dart';
 import 'package:flutter_app/views/SearchDemo2.dart';
 import 'package:flutter_app/views/SomeKeyDemo.dart';
 import 'package:flutter_app/views/StatefulWidgetDemo.dart';
-import 'package:flutter_app/views/scopedmodel/CountModel.dart';
-import 'package:flutter_app/views/scopedmodel/ScopedModelTop.dart';
+import 'package:flutter_app/views/providerdemo/Counter.dart';
+import 'package:flutter_app/views/providerdemo/ProviderDemo.dart';
+import 'package:flutter_app/views/providerdemo/ProviderSecond.dart';
 import 'package:flutter_app/widgetdemo/Demo.dart';
-import 'package:scoped_model/scoped_model.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
-//class MyApp extends StatelessWidget {
-//  // This widget is the root of your application.
-//  @override
-//  Widget build(BuildContext context) {
-//    return MaterialApp(
-//      title: 'Flutter Demo',
-//      theme: ThemeData(
-//        // This is the theme of your application.
-//        //
-//        // Try running your application with "flutter run". You'll see the
-//        // application has a blue toolbar. Then, without quitting the app, try
-//        // changing the primarySwatch below to Colors.green and then invoke
-//        // "hot reload" (press "r" in the console where you ran "flutter run",
-//        // or simply save your changes to "hot reload" in a Flutter IDE).
-//        // Notice that the counter didn't reset back to zero; the application
-//        // is not restarted.
-//        primarySwatch: Colors.green,
-//      ),
-////      home: MyHomePage(title: 'Flutter Demo Home Page'),
-////      home: Demo(),
-//      routes: {
-//        '/home':(BuildContext context) =>Demo(),
-//        '/home/one':(BuildContext context)=>SearchDemo(),
-//        '/home/two':(BuildContext context)=>SearchDemo2(),
-//        '/home/layout':(BuildContext context)=>LayoutDemo(),
-//        '/home/tiledemo':(BuildContext context)=>ListTileDemo(),
-//        '/home/listviewdemo':(BuildContext context)=>ListViewDemo(),
-//        '/home/StatefulWidgetDemo':(BuildContext context)=>StatefulWidgetDemo(),
-//        '/home/DecoratedBoxDemo':(BuildContext context)=>DecoratedBoxDemo(),
-//        '/home/SomeKeyDemo':(BuildContext context)=>SomeKeyDemo(),
-//        '/home/MixinsDemo':(BuildContext context)=>MixinsDemo(),
-//
-//      },
-//      initialRoute: '/home/MixinsDemo',
-//    );
-//  }
-//}
+//void main() => runApp(MyApp());
+
+void main() {
+  runApp(ChangeNotifierProvider.value(
+    value: Counter(),
+    child: MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
-  CountModel _countModel = CountModel();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ScopedModel<CountModel>(
-      model: _countModel,
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
-          primarySwatch: Colors.green,
-        ),
-//      home: MyHomePage(title: 'Flutter Demo Home Page'),
-      home: ScopedModelTop(),
-        routes: {
-          '/home': (BuildContext context) => Demo(),
-          '/home/one': (BuildContext context) => SearchDemo(),
-          '/home/two': (BuildContext context) => SearchDemo2(),
-          '/home/layout': (BuildContext context) => LayoutDemo(),
-          '/home/tiledemo': (BuildContext context) => ListTileDemo(),
-          '/home/listviewdemo': (BuildContext context) => ListViewDemo(),
-          '/home/StatefulWidgetDemo': (BuildContext context) =>
-              StatefulWidgetDemo(),
-          '/home/DecoratedBoxDemo': (BuildContext context) =>
-              DecoratedBoxDemo(),
-          '/home/SomeKeyDemo': (BuildContext context) => SomeKeyDemo(),
-          '/home/MixinsDemo': (BuildContext context) => MixinsDemo(),
-          '/home/ScopedModelTop': (BuildContext context) => ScopedModelTop(),
-        },
-//        initialRoute: '/home/ScopedModelTop',
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.green,
       ),
+//      home: MyHomePage(title: 'Flutter Demo Home Page'),
+//      home: Demo(),
+      routes: {
+        '/home': (BuildContext context) => Demo(),
+        '/home/one': (BuildContext context) => SearchDemo(),
+        '/home/two': (BuildContext context) => SearchDemo2(),
+        '/home/layout': (BuildContext context) => LayoutDemo(),
+        '/home/tiledemo': (BuildContext context) => ListTileDemo(),
+        '/home/listviewdemo': (BuildContext context) => ListViewDemo(),
+        '/home/StatefulWidgetDemo': (BuildContext context) =>
+            StatefulWidgetDemo(),
+        '/home/DecoratedBoxDemo': (BuildContext context) => DecoratedBoxDemo(),
+        '/home/SomeKeyDemo': (BuildContext context) => SomeKeyDemo(),
+        '/home/MixinsDemo': (BuildContext context) => MixinsDemo(),
+        '/home/ProviderDemo': (BuildContext context) => ProviderDemo(),
+        '/home/ProviderSecond':(BuildContext context)=>ProviderSecond()
+      },
+      initialRoute: '/home/ProviderDemo',
     );
   }
 }
+
+//class MyApp extends StatelessWidget {
+//  CountModel _countModel = CountModel();
+//  // This widget is the root of your application.
+//  @override
+//  Widget build(BuildContext context) {
+//    return ScopedModel<CountModel>(
+//      model: _countModel,
+//      child: MaterialApp(
+//        title: 'Flutter Demo',
+//        theme: ThemeData(
+//          // This is the theme of your application.
+//          //
+//          // Try running your application with "flutter run". You'll see the
+//          // application has a blue toolbar. Then, without quitting the app, try
+//          // changing the primarySwatch below to Colors.green and then invoke
+//          // "hot reload" (press "r" in the console where you ran "flutter run",
+//          // or simply save your changes to "hot reload" in a Flutter IDE).
+//          // Notice that the counter didn't reset back to zero; the application
+//          // is not restarted.
+//          primarySwatch: Colors.green,
+//        ),
+////      home: MyHomePage(title: 'Flutter Demo Home Page'),
+//      home: ScopedModelTop(),
+//        routes: {
+//          '/home': (BuildContext context) => Demo(),
+//          '/home/one': (BuildContext context) => SearchDemo(),
+//          '/home/two': (BuildContext context) => SearchDemo2(),
+//          '/home/layout': (BuildContext context) => LayoutDemo(),
+//          '/home/tiledemo': (BuildContext context) => ListTileDemo(),
+//          '/home/listviewdemo': (BuildContext context) => ListViewDemo(),
+//          '/home/StatefulWidgetDemo': (BuildContext context) =>
+//              StatefulWidgetDemo(),
+//          '/home/DecoratedBoxDemo': (BuildContext context) =>
+//              DecoratedBoxDemo(),
+//          '/home/SomeKeyDemo': (BuildContext context) => SomeKeyDemo(),
+//          '/home/MixinsDemo': (BuildContext context) => MixinsDemo(),
+//          '/home/ScopedModelTop': (BuildContext context) => ScopedModelTop(),
+//        },
+////        initialRoute: '/home/ScopedModelTop',
+//      ),
+//    );
+//  }
+//}
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
