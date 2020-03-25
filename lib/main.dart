@@ -8,6 +8,7 @@ import 'package:flutter_app/views/SearchDemo.dart';
 import 'package:flutter_app/views/SearchDemo2.dart';
 import 'package:flutter_app/views/SomeKeyDemo.dart';
 import 'package:flutter_app/views/StatefulWidgetDemo.dart';
+import 'package:flutter_app/views/httpdemo/HttpDemo.dart';
 import 'package:flutter_app/views/providerdemo/Counter.dart';
 import 'package:flutter_app/views/providerdemo/ProviderDemo.dart';
 import 'package:flutter_app/views/providerdemo/ProviderSecond.dart';
@@ -56,9 +57,10 @@ class MyApp extends StatelessWidget {
         '/home/SomeKeyDemo': (BuildContext context) => SomeKeyDemo(),
         '/home/MixinsDemo': (BuildContext context) => MixinsDemo(),
         '/home/ProviderDemo': (BuildContext context) => ProviderDemo(),
-        '/home/ProviderSecond':(BuildContext context)=>ProviderSecond()
+        '/home/ProviderSecond': (BuildContext context) => ProviderSecond(),
+        '/home/HttpDemo': (BuildContext context) => HttpDemo(),
       },
-      initialRoute: '/home/ProviderDemo',
+      initialRoute: '/home/HttpDemo',
     );
   }
 }

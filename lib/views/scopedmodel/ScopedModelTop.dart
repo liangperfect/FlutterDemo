@@ -10,9 +10,15 @@ class ScopedModelTop extends StatefulWidget {
 }
 
 class TopState extends State<ScopedModelTop> {
+  void getTest({branche = true}) {
+    if (branche) {
+      //还必须有分号，靠
+      print("测试一下");
+    }
+  }
 
   //静态获取model用法实例
-  Model getModel(BuildContext context){
+  Model getModel(BuildContext context) {
     //直接使用of
     final countModel = ScopedModel.of<CountModel>(context);
     //使用CountModel中重写的of
@@ -20,9 +26,11 @@ class TopState extends State<ScopedModelTop> {
 
     countModel.increment();
     countModel2.increment();
+    TextEditingController v = TextEditingController();
+    v.value = TextEditingValue(text: "设置了control");
     return countModel;
-    //    return countMode2;
   }
+
   @override
   Widget build(BuildContext context) {
     return ScopedModelDescendant(
@@ -34,14 +42,15 @@ class TopState extends State<ScopedModelTop> {
           ),
           body: Text('${model.count}'),
           floatingActionButton: FloatingActionButton(
-              child:Icon(Icons.navigate_next),
+            child: Icon(Icons.navigate_next),
             onPressed: _goUnder,
           ),
         );
       },
     );
   }
-  void _goUnder(){
-      Navigator.pushNamed(context, "");
+
+  void _goUnder() {
+    Navigator.pushNamed(context, "");
   }
 }
