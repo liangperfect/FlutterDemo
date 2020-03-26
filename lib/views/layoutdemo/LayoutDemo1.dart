@@ -18,12 +18,18 @@ class LayoutState extends State<LayoutDemo1> {
         backgroundColor: Colors.amberAccent,
       ),
       body: Container(
-        decoration: BoxDecoration(),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/pic.jpg'), fit: BoxFit.fill)),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             Image.asset("assets/images/pic.jpg"),
             Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/pic.jpg'),
+                      fit: BoxFit.cover)),
               padding: EdgeInsets.all(32.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,

@@ -16,6 +16,7 @@ import 'package:flutter_app/views/providerdemo/ProviderDemo.dart';
 import 'package:flutter_app/views/providerdemo/ProviderSecond.dart';
 import 'package:flutter_app/widgetdemo/Demo.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_app/views/layoutdemo/LoginPage.dart';
 
 //void main() => runApp(MyApp());
 
@@ -53,7 +54,8 @@ class MyApp extends StatelessWidget {
         '/home/layout': (BuildContext context) => LayoutDemo(),
         '/home/tiledemo': (BuildContext context) => ListTileDemo(),
         '/home/listviewdemo': (BuildContext context) => ListViewDemo(),
-        '/home/StatefulWidgetDemo': (BuildContext context) => StatefulWidgetDemo(),
+        '/home/StatefulWidgetDemo': (BuildContext context) =>
+            StatefulWidgetDemo(),
         '/home/DecoratedBoxDemo': (BuildContext context) => DecoratedBoxDemo(),
         '/home/SomeKeyDemo': (BuildContext context) => SomeKeyDemo(),
         '/home/MixinsDemo': (BuildContext context) => MixinsDemo(),
@@ -61,9 +63,10 @@ class MyApp extends StatelessWidget {
         '/home/ProviderSecond': (BuildContext context) => ProviderSecond(),
         '/home/HttpDemo': (BuildContext context) => HttpDemo(),
         '/home/StackDemo': (BuildContext context) => StackDemo(),
-        '/home/LayoutDemo1': (BuildContext context) => LayoutDemo1()
+        '/home/LayoutDemo1': (BuildContext context) => LayoutDemo1(),
+        '/home/LoginPage': (BuildContext context) => LoginPage()
       },
-      initialRoute: '/home/LayoutDemo1',
+      initialRoute: '/home/LoginPage',
     );
   }
 }
