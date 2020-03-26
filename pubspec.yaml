@@ -87,3 +87,6 @@ flutter:
     - family: projttf
       fonts:
         - asset: assets/fonts/iconfont.ttf
+
+  assets:
+    - assets/images/

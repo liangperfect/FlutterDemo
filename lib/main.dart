@@ -9,6 +9,8 @@ import 'package:flutter_app/views/SearchDemo2.dart';
 import 'package:flutter_app/views/SomeKeyDemo.dart';
 import 'package:flutter_app/views/StatefulWidgetDemo.dart';
 import 'package:flutter_app/views/httpdemo/HttpDemo.dart';
+import 'package:flutter_app/views/layoutdemo/LayoutDemo1.dart';
+import 'package:flutter_app/views/layoutdemo/StackDemo.dart';
 import 'package:flutter_app/views/providerdemo/Counter.dart';
 import 'package:flutter_app/views/providerdemo/ProviderDemo.dart';
 import 'package:flutter_app/views/providerdemo/ProviderSecond.dart';
@@ -51,16 +53,17 @@ class MyApp extends StatelessWidget {
         '/home/layout': (BuildContext context) => LayoutDemo(),
         '/home/tiledemo': (BuildContext context) => ListTileDemo(),
         '/home/listviewdemo': (BuildContext context) => ListViewDemo(),
-        '/home/StatefulWidgetDemo': (BuildContext context) =>
-            StatefulWidgetDemo(),
+        '/home/StatefulWidgetDemo': (BuildContext context) => StatefulWidgetDemo(),
         '/home/DecoratedBoxDemo': (BuildContext context) => DecoratedBoxDemo(),
         '/home/SomeKeyDemo': (BuildContext context) => SomeKeyDemo(),
         '/home/MixinsDemo': (BuildContext context) => MixinsDemo(),
         '/home/ProviderDemo': (BuildContext context) => ProviderDemo(),
         '/home/ProviderSecond': (BuildContext context) => ProviderSecond(),
         '/home/HttpDemo': (BuildContext context) => HttpDemo(),
+        '/home/StackDemo': (BuildContext context) => StackDemo(),
+        '/home/LayoutDemo1': (BuildContext context) => LayoutDemo1()
       },
-      initialRoute: '/home/HttpDemo',
+      initialRoute: '/home/LayoutDemo1',
     );
   }
 }
