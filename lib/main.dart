@@ -10,13 +10,14 @@ import 'package:flutter_app/views/SomeKeyDemo.dart';
 import 'package:flutter_app/views/StatefulWidgetDemo.dart';
 import 'package:flutter_app/views/httpdemo/HttpDemo.dart';
 import 'package:flutter_app/views/layoutdemo/LayoutDemo1.dart';
+import 'package:flutter_app/views/layoutdemo/LoginPage.dart';
 import 'package:flutter_app/views/layoutdemo/StackDemo.dart';
 import 'package:flutter_app/views/providerdemo/Counter.dart';
 import 'package:flutter_app/views/providerdemo/ProviderDemo.dart';
 import 'package:flutter_app/views/providerdemo/ProviderSecond.dart';
+import 'package:flutter_app/widgetdemo/ChipDemo.dart';
 import 'package:flutter_app/widgetdemo/Demo.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_app/views/layoutdemo/LoginPage.dart';
 
 //void main() => runApp(MyApp());
 
@@ -64,9 +65,10 @@ class MyApp extends StatelessWidget {
         '/home/HttpDemo': (BuildContext context) => HttpDemo(),
         '/home/StackDemo': (BuildContext context) => StackDemo(),
         '/home/LayoutDemo1': (BuildContext context) => LayoutDemo1(),
-        '/home/LoginPage': (BuildContext context) => LoginPage()
+        '/home/LoginPage': (BuildContext context) => LoginPage(),
+        '/home/ChipDemo': (BuildContext context) => ChipDemo(),
       },
-      initialRoute: '/home/LoginPage',
+      initialRoute: '/home/ChipDemo',
     );
   }
 }

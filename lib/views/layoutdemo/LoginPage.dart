@@ -146,9 +146,10 @@ class LoginState extends State<LoginPage> {
                       Material(
                         child: InkWell(
                           onTap: () {
-                            Fluttertoast.showToast(
-                                msg: '点击登录按钮并成功跳转',
-                                toastLength: Toast.LENGTH_SHORT);
+//                            Fluttertoast.showToast(
+//                                msg: '点击登录按钮并成功跳转',
+//                                toastLength: Toast.LENGTH_SHORT);
+                            goLogin();
                           },
                           child: Container(
                             padding: EdgeInsets.symmetric(
@@ -176,5 +177,12 @@ class LoginState extends State<LoginPage> {
         ],
       ),
     );
+  }
+
+  void goLogin() async {
+    print('goLogin');
+    String resultStr =
+        await Future.delayed(Duration(seconds: 3), () => '模拟网络请求数据');
+    Fluttertoast.showToast(msg: resultStr);
   }
 }
