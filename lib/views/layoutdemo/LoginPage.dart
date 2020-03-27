@@ -58,7 +58,10 @@ class LoginState extends State<LoginPage> {
                       Image.asset(
                         'assets/images/pic.jpg',
                         fit: BoxFit.cover,
-                        width: MediaQuery.of(context).size.width,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width,
                       ),
                     ],
                   ),
@@ -69,7 +72,10 @@ class LoginState extends State<LoginPage> {
                   child: Column(
                     children: <Widget>[
                       Container(
-                        width: MediaQuery.of(context).size.width - 40,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width - 40,
                         height: 42,
                         child: Row(
                           children: <Widget>[
@@ -78,7 +84,9 @@ class LoginState extends State<LoginPage> {
                               margin: EdgeInsets.only(top: 5, right: 20),
                               child: Icon(
                                 Icons.phone_iphone,
-                                color: Theme.of(context).primaryColor,
+                                color: Theme
+                                    .of(context)
+                                    .primaryColor,
                                 size: 20,
                               ),
                             ),
@@ -106,7 +114,10 @@ class LoginState extends State<LoginPage> {
                         height: 25,
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width - 40,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width - 40,
                         height: 42,
                         child: Row(
                           children: <Widget>[
@@ -114,7 +125,9 @@ class LoginState extends State<LoginPage> {
                               margin: EdgeInsets.only(left: 5.0, right: 10.0),
                               child: Icon(
                                 Icons.lock,
-                                color: Theme.of(context).primaryColor,
+                                color: Theme
+                                    .of(context)
+                                    .primaryColor,
                                 size: 20,
                               ),
                             ),
@@ -127,13 +140,14 @@ class LoginState extends State<LoginPage> {
                                     suffix: Text('忘记密码?'),
                                     border: UnderlineInputBorder(
                                         borderSide: BorderSide(
-                                      width: 1,
-                                      color: Colors.grey[300],
-                                    )),
+                                          width: 1,
+                                          color: Colors.grey[300],
+                                        )),
                                     focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                             width: 1,
-                                            color: Theme.of(context)
+                                            color: Theme
+                                                .of(context)
                                                 .primaryColor))),
                               ),
                             )
@@ -154,11 +168,16 @@ class LoginState extends State<LoginPage> {
                           child: Container(
                             padding: EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 0),
-                            width: MediaQuery.of(context).size.width - 40,
+                            width: MediaQuery
+                                .of(context)
+                                .size
+                                .width - 40,
                             decoration: BoxDecoration(
-                                color: Theme.of(context).primaryColor,
+                                color: Theme
+                                    .of(context)
+                                    .primaryColor,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(20))),
+                                BorderRadius.all(Radius.circular(20))),
                             child: Text(
                               '登录',
                               style: TextStyle(
@@ -182,7 +201,22 @@ class LoginState extends State<LoginPage> {
   void goLogin() async {
     print('goLogin');
     String resultStr =
-        await Future.delayed(Duration(seconds: 3), () => '模拟网络请求数据');
+    await Future.delayed(Duration(seconds: 3), () => '模拟网络请求数据');
     Fluttertoast.showToast(msg: resultStr);
+  }
+}
+
+class LoginPage2 extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => Login2State();
+}
+
+class Login2State extends State<LoginPage2> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('登录界面2'),),
+      body: Text('中间文字'),
+    );
   }
 }

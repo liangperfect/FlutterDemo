@@ -11,6 +11,8 @@ class ChipState extends State<ChipDemo> {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
+        height: MediaQuery.of(context).size.height * 0.6,
+        constraints: BoxConstraints(maxWidth: 100, maxHeight: 200),
         color: Colors.amberAccent,
         alignment: Alignment.centerLeft,
         child: Wrap(

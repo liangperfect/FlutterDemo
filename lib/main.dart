@@ -11,11 +11,13 @@ import 'package:flutter_app/views/StatefulWidgetDemo.dart';
 import 'package:flutter_app/views/httpdemo/HttpDemo.dart';
 import 'package:flutter_app/views/layoutdemo/LayoutDemo1.dart';
 import 'package:flutter_app/views/layoutdemo/LoginPage.dart';
+import 'package:flutter_app/views/layoutdemo/PageIndex.dart';
 import 'package:flutter_app/views/layoutdemo/StackDemo.dart';
 import 'package:flutter_app/views/providerdemo/Counter.dart';
 import 'package:flutter_app/views/providerdemo/ProviderDemo.dart';
 import 'package:flutter_app/views/providerdemo/ProviderSecond.dart';
 import 'package:flutter_app/widgetdemo/ChipDemo.dart';
+import 'package:flutter_app/widgetdemo/ClipPathDemo.dart';
 import 'package:flutter_app/widgetdemo/Demo.dart';
 import 'package:provider/provider.dart';
 
@@ -67,8 +69,10 @@ class MyApp extends StatelessWidget {
         '/home/LayoutDemo1': (BuildContext context) => LayoutDemo1(),
         '/home/LoginPage': (BuildContext context) => LoginPage(),
         '/home/ChipDemo': (BuildContext context) => ChipDemo(),
+        '/home/MainActivity': (BuildContext context) => PageIndex(),
+        '/home/ClipPathDemo': (BuildContext context) => ClipPathDemo(),
       },
-      initialRoute: '/home/ChipDemo',
+      initialRoute: '/home/ClipPathDemo',
     );
   }
 }
