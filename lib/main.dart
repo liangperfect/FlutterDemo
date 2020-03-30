@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app/views/DecoratedBoxDemo.dart';
 import 'package:flutter_app/views/LayoutDemo.dart';
 import 'package:flutter_app/views/ListTileDemo.dart';
@@ -13,12 +14,14 @@ import 'package:flutter_app/views/layoutdemo/LayoutDemo1.dart';
 import 'package:flutter_app/views/layoutdemo/LoginPage.dart';
 import 'package:flutter_app/views/layoutdemo/PageIndex.dart';
 import 'package:flutter_app/views/layoutdemo/StackDemo.dart';
+import 'package:flutter_app/views/meituanfake/MeiTuan.dart';
 import 'package:flutter_app/views/providerdemo/Counter.dart';
 import 'package:flutter_app/views/providerdemo/ProviderDemo.dart';
 import 'package:flutter_app/views/providerdemo/ProviderSecond.dart';
 import 'package:flutter_app/widgetdemo/ChipDemo.dart';
 import 'package:flutter_app/widgetdemo/ClipPathDemo.dart';
 import 'package:flutter_app/widgetdemo/Demo.dart';
+import 'package:flutter_app/widgetdemo/StateChangeDemo.dart';
 import 'package:provider/provider.dart';
 
 //void main() => runApp(MyApp());
@@ -34,6 +37,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+//    SystemUiOverlayStyle systemUiOverlayStyle =
+//        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+//    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -71,8 +78,10 @@ class MyApp extends StatelessWidget {
         '/home/ChipDemo': (BuildContext context) => ChipDemo(),
         '/home/MainActivity': (BuildContext context) => PageIndex(),
         '/home/ClipPathDemo': (BuildContext context) => ClipPathDemo(),
+        '/home/StateChangeDemo': (BuildContext context) => StateChangeDemo(),
+        '/home/MeiTuan': (BuildContext context) => MeiTuanHome(),
       },
-      initialRoute: '/home/ClipPathDemo',
+      initialRoute: '/home/MeiTuan',
     );
   }
 }
