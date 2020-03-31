@@ -15,6 +15,7 @@ import 'package:flutter_app/views/layoutdemo/LoginPage.dart';
 import 'package:flutter_app/views/layoutdemo/PageIndex.dart';
 import 'package:flutter_app/views/layoutdemo/StackDemo.dart';
 import 'package:flutter_app/views/meituanfake/MeiTuan.dart';
+import 'package:flutter_app/views/meituanfake/RefreshIndicatorDemo.dart';
 import 'package:flutter_app/views/providerdemo/Counter.dart';
 import 'package:flutter_app/views/providerdemo/ProviderDemo.dart';
 import 'package:flutter_app/views/providerdemo/ProviderSecond.dart';
@@ -23,6 +24,7 @@ import 'package:flutter_app/widgetdemo/ClipPathDemo.dart';
 import 'package:flutter_app/widgetdemo/Demo.dart';
 import 'package:flutter_app/widgetdemo/StateChangeDemo.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_app/views/meituanfake/MeiTuan2.dart';
 
 //void main() => runApp(MyApp());
 
@@ -40,7 +42,8 @@ class MyApp extends StatelessWidget {
 //    SystemUiOverlayStyle systemUiOverlayStyle =
 //        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
 //    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -80,8 +83,11 @@ class MyApp extends StatelessWidget {
         '/home/ClipPathDemo': (BuildContext context) => ClipPathDemo(),
         '/home/StateChangeDemo': (BuildContext context) => StateChangeDemo(),
         '/home/MeiTuan': (BuildContext context) => MeiTuanHome(),
+        '/home/MeiTuan2':(BuildContext context)=>MeiTuanHome2(),
+        '/home/RefreshIndicatorDemo': (BuildContext context) =>
+            RefreshIndicatorDemo(),
       },
-      initialRoute: '/home/MeiTuan',
+      initialRoute: '/home/MeiTuan2',
     );
   }
 }
