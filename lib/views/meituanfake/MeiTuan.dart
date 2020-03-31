@@ -7,6 +7,9 @@ class MeiTuanHome extends StatefulWidget {
 }
 
 class MeiTuanHomeState extends State<MeiTuanHome> {
+  ScrollController _scrollController = ScrollController();
+  final _tabs = <String>['TabA', 'TabB'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,53 +17,122 @@ class MeiTuanHomeState extends State<MeiTuanHome> {
         body: Container(
       color: Colors.yellow,
       padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          //Custom App Bar
-          _createCustomRow(),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 0.0),
-            color: Colors.yellow,
-            child: _createHotSearch(),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 0.0),
-            color: Colors.yellow,
-            child: _createOperation(),
-          ),
-          Container(
-            color: Colors.yellow,
-            padding: EdgeInsets.all(10),
-            child: Card(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 0.0),
-                    child: _createMethod2(),
+      child: Container(
+        child: SingleChildScrollView(
+          controller: _scrollController,
+          physics: AlwaysScrollableScrollPhysics(),
+          child: Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                //Custom App Bar
+                _createCustomRow(),
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 0.0),
+                  color: Colors.yellow,
+                  child: _createHotSearch(),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 0.0),
+                  color: Colors.yellow,
+                  child: _createOperation(),
+                ),
+
+                Container(
+                  child: RefreshIndicator(
+                    onRefresh: () {
+                      return _getCustomFuture();
+                    },
+                    child: Container(
+                      color: Colors.yellow,
+                      padding: EdgeInsets.all(10),
+                      child: Card(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 8.0, horizontal: 0.0),
+                              child: _createMethod2(),
+                            ),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 8.0, horizontal: 0.0),
+                              child: _createMethod2(),
+                            ),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 8.0, horizontal: 0.0),
+                              child: _createMethod2(),
+                            ),
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 8.0, horizontal: 0.0),
+                              child: _createMethod2(),
+                            ),
+                            Container(
+                              child: ListView(
+                                shrinkWrap: true,
+//                                controller: _scrollController,
+//                          controller: _scrollController,
+                                children: <Widget>[
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                  Text('123'),
+                                ],
+                                physics: NeverScrollableScrollPhysics(),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 0.0),
-                    child: _createMethod2(),
-                  ),
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 0.0),
-                    child: _createMethod2(),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
-          )
-        ],
+          ),
+        ),
       ),
     ));
   }
+
+  Future<String> _getCustomFuture() => Future.delayed(Duration(seconds: 3), () {
+        return "";
+      });
 
   AppBar _createAppBar() => AppBar(
         brightness: Brightness.light,
@@ -270,4 +342,10 @@ class MeiTuanHomeState extends State<MeiTuanHome> {
           _createOptItem('assets/images/pic.jpg', '休闲/玩乐'),
         ],
       );
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(() {});
+  }
 }

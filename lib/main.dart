@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
 //    SystemUiOverlayStyle systemUiOverlayStyle =
 //        SystemUiOverlayStyle(statusBarColor: Colors.transparent);
 //    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
