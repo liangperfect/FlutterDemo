@@ -15,22 +15,30 @@ import 'package:flutter_app/views/layoutdemo/LoginPage.dart';
 import 'package:flutter_app/views/layoutdemo/PageIndex.dart';
 import 'package:flutter_app/views/layoutdemo/StackDemo.dart';
 import 'package:flutter_app/views/meituanfake/MeiTuan.dart';
+import 'package:flutter_app/views/meituanfake/MeiTuan2.dart';
 import 'package:flutter_app/views/meituanfake/RefreshIndicatorDemo.dart';
-import 'package:flutter_app/views/providerdemo/Counter.dart';
-import 'package:flutter_app/views/providerdemo/ProviderDemo.dart';
-import 'package:flutter_app/views/providerdemo/ProviderSecond.dart';
+import 'package:flutter_app/views/navigatordemo/NavigatorPage1.dart';
+import 'package:flutter_app/views/navigatordemo/NavigatorPage2.dart';
+import 'package:flutter_app/views/providerdemo/CountModel.dart';
+import 'package:flutter_app/views/providerdemo/CountPage1.dart';
+import 'package:flutter_app/views/providerdemo/FavoriteModel.dart';
 import 'package:flutter_app/widgetdemo/ChipDemo.dart';
 import 'package:flutter_app/widgetdemo/ClipPathDemo.dart';
 import 'package:flutter_app/widgetdemo/Demo.dart';
 import 'package:flutter_app/widgetdemo/StateChangeDemo.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_app/views/meituanfake/MeiTuan2.dart';
-
-//void main() => runApp(MyApp());
 
 void main() {
-  runApp(ChangeNotifierProvider.value(
-    value: Counter(),
+  runApp(
+//    ChangeNotifierProvider<CountModel>.value(
+//      value: CountModel(0),
+//      child: MyApp(),
+//    ),
+      MultiProvider(
+    providers: [
+      ChangeNotifierProvider<CountModel>.value(value: CountModel(0)),
+      ChangeNotifierProvider<FavoriteModel>.value(value: FavoriteModel(0)),
+    ],
     child: MyApp(),
   ));
 }
@@ -72,8 +80,6 @@ class MyApp extends StatelessWidget {
         '/home/DecoratedBoxDemo': (BuildContext context) => DecoratedBoxDemo(),
         '/home/SomeKeyDemo': (BuildContext context) => SomeKeyDemo(),
         '/home/MixinsDemo': (BuildContext context) => MixinsDemo(),
-        '/home/ProviderDemo': (BuildContext context) => ProviderDemo(),
-        '/home/ProviderSecond': (BuildContext context) => ProviderSecond(),
         '/home/HttpDemo': (BuildContext context) => HttpDemo(),
         '/home/StackDemo': (BuildContext context) => StackDemo(),
         '/home/LayoutDemo1': (BuildContext context) => LayoutDemo1(),
@@ -83,11 +89,14 @@ class MyApp extends StatelessWidget {
         '/home/ClipPathDemo': (BuildContext context) => ClipPathDemo(),
         '/home/StateChangeDemo': (BuildContext context) => StateChangeDemo(),
         '/home/MeiTuan': (BuildContext context) => MeiTuanHome(),
-        '/home/MeiTuan2':(BuildContext context)=>MeiTuanHome2(),
+        '/home/MeiTuan2': (BuildContext context) => MeiTuanHome2(),
         '/home/RefreshIndicatorDemo': (BuildContext context) =>
             RefreshIndicatorDemo(),
+        '/home/providerdemo': (BuildContext context) => CountPage1(),
+        '/home/navigatorpage1': (BuildContext context) => NavigatorPage1(),
+//        '/home/navigatorpage2': (BuildContext context) => NavigatorPage2()
       },
-      initialRoute: '/home/MeiTuan2',
+      initialRoute: '/home/navigatorpage1',
     );
   }
 }
