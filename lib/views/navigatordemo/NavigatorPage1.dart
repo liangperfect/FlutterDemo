@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/views/navigatordemo/NavigatorPage2.dart';
+import 'package:flutter_app/views/config/route_manager.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class NavigatorPage1 extends StatefulWidget {
@@ -27,11 +27,14 @@ class _Page1State extends State<NavigatorPage1> {
   void _nextPage() {
     //通过静态注册跳转页面
     // Navigator.pushNamed(context, '/home/navigatorpage2');
-
-    Navigator.push(context,
-            MaterialPageRoute(builder: (context) => NavigatorPage2("asd")))
+//    Navigator.push(context,
+//            MaterialPageRoute(builder: (context) => NavigatorPage2("asd")))
+//        .then((Object strs) {
+//      Fluttertoast.showToast(msg: '从关闭也返回来的数据是${strs.toString()}');
+//    });
+    Navigator.pushNamed(context, RouterName.navigatorpage2, arguments: 'asd')
         .then((Object strs) {
-      Fluttertoast.showToast(msg: '从关闭也返回来的数据是${strs.toString()}');
+      Fluttertoast.showToast(msg: '从关闭页面发挥的数据是${strs.toString()}');
     });
   }
 

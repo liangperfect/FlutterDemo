@@ -9,6 +9,7 @@ import 'package:flutter_app/views/SearchDemo.dart';
 import 'package:flutter_app/views/SearchDemo2.dart';
 import 'package:flutter_app/views/SomeKeyDemo.dart';
 import 'package:flutter_app/views/StatefulWidgetDemo.dart';
+import 'package:flutter_app/views/config/route_manager.dart';
 import 'package:flutter_app/views/httpdemo/HttpDemo.dart';
 import 'package:flutter_app/views/layoutdemo/LayoutDemo1.dart';
 import 'package:flutter_app/views/layoutdemo/LoginPage.dart';
@@ -17,8 +18,6 @@ import 'package:flutter_app/views/layoutdemo/StackDemo.dart';
 import 'package:flutter_app/views/meituanfake/MeiTuan.dart';
 import 'package:flutter_app/views/meituanfake/MeiTuan2.dart';
 import 'package:flutter_app/views/meituanfake/RefreshIndicatorDemo.dart';
-import 'package:flutter_app/views/navigatordemo/NavigatorPage1.dart';
-import 'package:flutter_app/views/navigatordemo/NavigatorPage2.dart';
 import 'package:flutter_app/views/providerdemo/CountModel.dart';
 import 'package:flutter_app/views/providerdemo/CountPage1.dart';
 import 'package:flutter_app/views/providerdemo/FavoriteModel.dart';
@@ -93,10 +92,10 @@ class MyApp extends StatelessWidget {
         '/home/RefreshIndicatorDemo': (BuildContext context) =>
             RefreshIndicatorDemo(),
         '/home/providerdemo': (BuildContext context) => CountPage1(),
-        '/home/navigatorpage1': (BuildContext context) => NavigatorPage1(),
 //        '/home/navigatorpage2': (BuildContext context) => NavigatorPage2()
       },
-      initialRoute: '/home/navigatorpage1',
+//      initialRoute: '/navigatorpage1',
+      onGenerateRoute: Router.generateRoute,
     );
   }
 }
