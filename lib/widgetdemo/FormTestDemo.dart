@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/views/config/route_manager.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter_app/service/my_repository.dart';
+import 'package:flutter_app/views/diodemo/LoginResultBean.dart';
 
 class FormTestDemo extends StatefulWidget {
   @override
@@ -12,6 +12,7 @@ class FormTestState extends State<FormTestDemo> {
   TextEditingController accountController = TextEditingController();
   TextEditingController pwdController = TextEditingController();
   GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  String resultStr = "返回的结果";
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +65,12 @@ class FormTestState extends State<FormTestDemo> {
                               focusedBorder: UnderlineInputBorder(
                                   borderSide:
                                       BorderSide(color: Color(0xFF183FF5)))),
+                          validator: (txt) {
+                            if (txt.isEmpty) {
+                              return "请输入用户名";
+                            }
+                            return null;
+                          },
                         ),
                         TextFormField(
                           obscureText: true,
@@ -107,7 +114,8 @@ class FormTestState extends State<FormTestDemo> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(28))),
                   ),
-                )
+                ),
+                Text(resultStr),
               ],
             ),
           ),
@@ -116,20 +124,22 @@ class FormTestState extends State<FormTestDemo> {
 
   void _loginApp() {
     final form = _formKey.currentState;
+    print("开始进行网络请求");
     if (form.validate()) {
-      _fakeHttp().then((result) {
-        if (result == "登录成功") {
-          Navigator.pushNamed(context, RouterName.navigatorpage1);
-        } else {
-          Fluttertoast.showToast(msg: '登录失败，原因是123');
-        }
+      print("进行收集请求");
+      MyRepository.doLogin(accountController.text, pwdController.text)
+          .then((r) {
+        setState(() {
+          resultStr = (r as LoginResultBean).loginUserInfo.token;
+        });
       });
+//      _fakeHttp().then((result) {
+//        if (result == "登录成功") {
+//          Navigator.pushNamed(context, RouterName.navigatorpage1);
+//        } else {
+//          Fluttertoast.showToast(msg: '登录失败，原因是123');
+//        }
+//      });
     }
-  }
-
-  Future<String> _fakeHttp() async {
-    return await Future.delayed(Duration(seconds: 3), () {
-      return "登录成功";
-    });
   }
 }

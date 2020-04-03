@@ -88,8 +88,6 @@ class LayoutState extends State<LayoutDemo1> {
       ),
     );
   }
-
-
 }
 
 class MethodWidget extends StatelessWidget {

@@ -19,7 +19,7 @@ abstract class BaseHttp extends DioForNative {
   BaseHttp() {
     /// 初始化 加入app通用处理
     (transformer as DefaultTransformer).jsonDecodeCallback = parseJson;
-//    interceptors..add(HeaderInterceptor());
+    interceptors..add(HeaderInterceptor());
     init();
   }
 
@@ -27,22 +27,23 @@ abstract class BaseHttp extends DioForNative {
 }
 
 /// 添加常用Header
-//class HeaderInterceptor extends InterceptorsWrapper {
-//  @override
-//  onRequest(RequestOptions options) async {
-//    options.connectTimeout = 1000 * 45;
-//    options.receiveTimeout = 1000 * 45;
-//
+class HeaderInterceptor extends InterceptorsWrapper {
+  @override
+  onRequest(RequestOptions options) async {
+    options.connectTimeout = 1000 * 45;
+    options.receiveTimeout = 1000 * 45;
+
 //    var appVersion = await PlatformUtils.getAppVersion();
 //    var version = Map()
 //      ..addAll({
 //        'appVerison': appVersion,
 //      });
 //    options.headers['version'] = version;
+    options.headers['test'] = 'test';
 //    options.headers['platform'] = Platform.operatingSystem;
-//    return options;
-//  }
-//}
+    return options;
+  }
+}
 
 /// 子类需要重写
 abstract class BaseResponseData {
@@ -59,7 +60,6 @@ abstract class BaseResponseData {
     return 'BaseRespData{code: $code, message: $message, data: $data}';
   }
 }
-
 
 /// 接口的code没有返回为true的异常
 class NotSuccessException implements Exception {
@@ -82,4 +82,3 @@ class UnAuthorizedException implements Exception {
   @override
   String toString() => 'UnAuthorizedException';
 }
-

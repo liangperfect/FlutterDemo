@@ -25,9 +25,9 @@ dependencies:
   cupertino_icons: ^0.1.2
   scoped_model: ^0.3.0
   provider: ^4.0.4
-
+  path_provider: ^1.6.5
   # http
-  dio: ^3.0.1
+  dio: ^3.0.9
   dio_cookie_manager: ^1.0.0
   cookie_jar: ^1.0.0
   shared_preferences: ^0.5.3+5

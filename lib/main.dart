@@ -10,7 +10,6 @@ import 'package:flutter_app/views/SearchDemo2.dart';
 import 'package:flutter_app/views/SomeKeyDemo.dart';
 import 'package:flutter_app/views/StatefulWidgetDemo.dart';
 import 'package:flutter_app/views/config/route_manager.dart';
-import 'package:flutter_app/views/httpdemo/HttpDemo.dart';
 import 'package:flutter_app/views/layoutdemo/LayoutDemo1.dart';
 import 'package:flutter_app/views/layoutdemo/LoginPage.dart';
 import 'package:flutter_app/views/layoutdemo/PageIndex.dart';
@@ -79,7 +78,6 @@ class MyApp extends StatelessWidget {
         '/home/DecoratedBoxDemo': (BuildContext context) => DecoratedBoxDemo(),
         '/home/SomeKeyDemo': (BuildContext context) => SomeKeyDemo(),
         '/home/MixinsDemo': (BuildContext context) => MixinsDemo(),
-        '/home/HttpDemo': (BuildContext context) => HttpDemo(),
         '/home/StackDemo': (BuildContext context) => StackDemo(),
         '/home/LayoutDemo1': (BuildContext context) => LayoutDemo1(),
         '/home/LoginPage': (BuildContext context) => LoginPage(),
