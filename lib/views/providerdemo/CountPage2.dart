@@ -15,7 +15,6 @@ class CountPage2 extends StatelessWidget {
         builder:
             (context, CountModel countModel, FavoriteModel favoriteModel, _) {
           return Center(
-//              child: Text('第二张界面的Count${model.getCount()}'),
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

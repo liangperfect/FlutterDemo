@@ -10,8 +10,6 @@ class MyRepository {
         FormData.fromMap({'UserName': userName, 'UserPwd': userPwd});
 
     var response = await http.post('/api/AppUsers/Login', data: formData);
-//    var r = LoginResultBean.fromJson(response.data);
-//    print('${r.toJson().toString()}');
     return LoginResultBean.fromJson(response.data);
   }
 }

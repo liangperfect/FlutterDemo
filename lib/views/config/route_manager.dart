@@ -19,12 +19,14 @@ class RouterName {
   static const String visibilitydemo = "visibilitydemo";
   static const String diotestdemo = "diotestdemo";
   static const String login = "login";
+  static const String builderdemo = "builderdemo";
 }
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouterName.main:
+        //完整的登录界面
         return NoAnimRouteBuilder(FormTestDemo());
       case RouterName.diotestdemo:
         return NoAnimRouteBuilder(DioTestDemo());

@@ -24,21 +24,24 @@ import 'package:flutter_app/widgetdemo/ChipDemo.dart';
 import 'package:flutter_app/widgetdemo/ClipPathDemo.dart';
 import 'package:flutter_app/widgetdemo/Demo.dart';
 import 'package:flutter_app/widgetdemo/StateChangeDemo.dart';
+import 'package:oktoast/oktoast.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
 //    ChangeNotifierProvider<CountModel>.value(
-//      value: CountModel(0),
-//      child: MyApp(),
-//    ),
-      MultiProvider(
-    providers: [
-      ChangeNotifierProvider<CountModel>.value(value: CountModel(0)),
-      ChangeNotifierProvider<FavoriteModel>.value(value: FavoriteModel(0)),
-    ],
-    child: MyApp(),
-  ));
+////      value: CountModel(0),
+////      child: MyApp(),
+////    ),
+    OKToast(
+        child: MultiProvider(
+      providers: [
+        ChangeNotifierProvider<CountModel>.value(value: CountModel(0)),
+        ChangeNotifierProvider<FavoriteModel>.value(value: FavoriteModel(0)),
+      ],
+      child: MyApp(),
+    )),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -50,50 +53,53 @@ class MyApp extends StatelessWidget {
 //    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(statusBarColor: Colors.transparent));
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.green,
-      ),
+    return OKToast(
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          // This is the theme of your application.
+          //
+          // Try running your application with "flutter run". You'll see the
+          // application has a blue toolbar. Then, without quitting the app, try
+          // changing the primarySwatch below to Colors.green and then invoke
+          // "hot reload" (press "r" in the console where you ran "flutter run",
+          // or simply save your changes to "hot reload" in a Flutter IDE).
+          // Notice that the counter didn't reset back to zero; the application
+          // is not restarted.
+          primarySwatch: Colors.green,
+        ),
 //      home: MyHomePage(title: 'Flutter Demo Home Page'),
 //      home: Demo(),
-      routes: {
-        '/home': (BuildContext context) => Demo(),
-        '/home/one': (BuildContext context) => SearchDemo(),
-        '/home/two': (BuildContext context) => SearchDemo2(),
-        '/home/layout': (BuildContext context) => LayoutDemo(),
-        '/home/tiledemo': (BuildContext context) => ListTileDemo(),
-        '/home/listviewdemo': (BuildContext context) => ListViewDemo(),
-        '/home/StatefulWidgetDemo': (BuildContext context) =>
-            StatefulWidgetDemo(),
-        '/home/DecoratedBoxDemo': (BuildContext context) => DecoratedBoxDemo(),
-        '/home/SomeKeyDemo': (BuildContext context) => SomeKeyDemo(),
-        '/home/MixinsDemo': (BuildContext context) => MixinsDemo(),
-        '/home/StackDemo': (BuildContext context) => StackDemo(),
-        '/home/LayoutDemo1': (BuildContext context) => LayoutDemo1(),
-        '/home/LoginPage': (BuildContext context) => LoginPage(),
-        '/home/ChipDemo': (BuildContext context) => ChipDemo(),
-        '/home/MainActivity': (BuildContext context) => PageIndex(),
-        '/home/ClipPathDemo': (BuildContext context) => ClipPathDemo(),
-        '/home/StateChangeDemo': (BuildContext context) => StateChangeDemo(),
-        '/home/MeiTuan': (BuildContext context) => MeiTuanHome(),
-        '/home/MeiTuan2': (BuildContext context) => MeiTuanHome2(),
-        '/home/RefreshIndicatorDemo': (BuildContext context) =>
-            RefreshIndicatorDemo(),
-        '/home/providerdemo': (BuildContext context) => CountPage1(),
+        routes: {
+          '/home': (BuildContext context) => Demo(),
+          '/home/one': (BuildContext context) => SearchDemo(),
+          '/home/two': (BuildContext context) => SearchDemo2(),
+          '/home/layout': (BuildContext context) => LayoutDemo(),
+          '/home/tiledemo': (BuildContext context) => ListTileDemo(),
+          '/home/listviewdemo': (BuildContext context) => ListViewDemo(),
+          '/home/StatefulWidgetDemo': (BuildContext context) =>
+              StatefulWidgetDemo(),
+          '/home/DecoratedBoxDemo': (BuildContext context) =>
+              DecoratedBoxDemo(),
+          '/home/SomeKeyDemo': (BuildContext context) => SomeKeyDemo(),
+          '/home/MixinsDemo': (BuildContext context) => MixinsDemo(),
+          '/home/StackDemo': (BuildContext context) => StackDemo(),
+          '/home/LayoutDemo1': (BuildContext context) => LayoutDemo1(),
+          '/home/LoginPage': (BuildContext context) => LoginPage(),
+          '/home/ChipDemo': (BuildContext context) => ChipDemo(),
+          '/home/MainActivity': (BuildContext context) => PageIndex(),
+          '/home/ClipPathDemo': (BuildContext context) => ClipPathDemo(),
+          '/home/StateChangeDemo': (BuildContext context) => StateChangeDemo(),
+          '/home/MeiTuan': (BuildContext context) => MeiTuanHome(),
+          '/home/MeiTuan2': (BuildContext context) => MeiTuanHome2(),
+          '/home/RefreshIndicatorDemo': (BuildContext context) =>
+              RefreshIndicatorDemo(),
+          '/home/providerdemo': (BuildContext context) => CountPage1(),
 //        '/home/navigatorpage2': (BuildContext context) => NavigatorPage2()
-      },
+        },
 //      initialRoute: '/navigatorpage1',
-      onGenerateRoute: Router.generateRoute,
+        onGenerateRoute: Router.generateRoute,
+      ),
     );
   }
 }
