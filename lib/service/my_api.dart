@@ -1,3 +1,4 @@
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -20,7 +21,7 @@ class Http extends BaseHttp {
 //      client.findProxy = (uri) {
 //        //proxy all request to localhost:8888
 ////        return "PROXY 192.168.10.184:8888";
-//        return "PROXY 172.16.3.85:8888";
+//        return "PROXY 192.168.10.182:8888";
 //      };
 //    };
     // cookie持久化 异步
@@ -42,7 +43,6 @@ class ApiInterceptor extends InterceptorsWrapper {
   @override
   onResponse(Response response) {
     ResponseData respData = ResponseData.fromJson(response.data);
-    print('chenliang 打印出的log是${respData.code}');
     if (respData.success) {
       response.data = respData.data;
       return http.resolve(response);

@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/views/config/page_route_anim.dart';
 import 'package:flutter_app/views/diodemo/DioTestDemo.dart';
+import 'package:flutter_app/views/layoutdemo/ListViewDemo.dart';
+import 'package:flutter_app/views/layoutdemo/device_list_page.dart';
 import 'package:flutter_app/views/navigatordemo/NavigatorPage1.dart';
 import 'package:flutter_app/views/navigatordemo/NavigatorPage2.dart';
 import 'package:flutter_app/widgetdemo/FitBoxDemo.dart';
@@ -20,12 +22,18 @@ class RouterName {
   static const String diotestdemo = "diotestdemo";
   static const String login = "login";
   static const String builderdemo = "builderdemo";
+  static const String listviewdemo = "listviewdemo";
+  static const String devicelistpage = "devicelistpage";
 }
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouterName.main:
+        return NoAnimRouteBuilder(DeviceListPage());
+      case RouterName.listviewdemo:
+        return NoAnimRouteBuilder(ListViewDemo());
+      case RouterName.formtestdemo:
         //完整的登录界面
         return NoAnimRouteBuilder(FormTestDemo());
       case RouterName.diotestdemo:
