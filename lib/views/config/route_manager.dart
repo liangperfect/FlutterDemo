@@ -4,6 +4,7 @@ import 'package:flutter_app/views/config/page_route_anim.dart';
 import 'package:flutter_app/views/diodemo/DioTestDemo.dart';
 import 'package:flutter_app/views/layoutdemo/ListViewDemo.dart';
 import 'package:flutter_app/views/layoutdemo/device_list_page.dart';
+import 'package:flutter_app/views/layoutdemo/home_page.dart';
 import 'package:flutter_app/views/navigatordemo/NavigatorPage1.dart';
 import 'package:flutter_app/views/navigatordemo/NavigatorPage2.dart';
 import 'package:flutter_app/widgetdemo/FitBoxDemo.dart';
@@ -26,12 +27,16 @@ class RouterName {
   static const String listviewdemo = "listviewdemo";
   static const String devicelistpage = "devicelistpage";
   static const String tabviewdemo = "tabviewdemo";
+  static const String homepagetest = "homepagetest";
 }
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouterName.main:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => HomePageTestWidget());
+      case RouterName.tabviewdemo:
         return MaterialPageRoute(
             builder: (BuildContext context) => TabViewDemo());
       case RouterName.devicelistpage:
