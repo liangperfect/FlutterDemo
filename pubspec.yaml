@@ -94,3 +94,5 @@ flutter:
     - assets/images/login_icon_logo.png
     - assets/images/account.png
     - assets/images/password.png
+    - assets/images/circle1.png
+    - assets/images/close.png

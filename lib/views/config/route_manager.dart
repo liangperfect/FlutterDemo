@@ -8,6 +8,7 @@ import 'package:flutter_app/views/navigatordemo/NavigatorPage1.dart';
 import 'package:flutter_app/views/navigatordemo/NavigatorPage2.dart';
 import 'package:flutter_app/widgetdemo/FitBoxDemo.dart';
 import 'package:flutter_app/widgetdemo/FormTestDemo.dart';
+import 'package:flutter_app/widgetdemo/tabview_demo.dart';
 
 class RouterName {
   static const String main = "/";
@@ -24,18 +25,25 @@ class RouterName {
   static const String builderdemo = "builderdemo";
   static const String listviewdemo = "listviewdemo";
   static const String devicelistpage = "devicelistpage";
+  static const String tabviewdemo = "tabviewdemo";
 }
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouterName.main:
-        return NoAnimRouteBuilder(DeviceListPage());
+        return MaterialPageRoute(
+            builder: (BuildContext context) => TabViewDemo());
+      case RouterName.devicelistpage:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => DeviceListPage());
       case RouterName.listviewdemo:
         return NoAnimRouteBuilder(ListViewDemo());
       case RouterName.formtestdemo:
         //完整的登录界面
-        return NoAnimRouteBuilder(FormTestDemo());
+//        return  NoAnimRouteBuilder(FormTestDemo());
+        return MaterialPageRoute(
+            builder: (BuildContext context) => FormTestDemo());
       case RouterName.diotestdemo:
         return NoAnimRouteBuilder(DioTestDemo());
       case RouterName.visibilitydemo:

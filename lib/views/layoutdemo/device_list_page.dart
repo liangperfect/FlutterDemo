@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/providerutil/provider_widget.dart';
 import 'package:flutter_app/view_model/articles_view_model.dart';
+import 'package:flutter_app/views/config/route_manager.dart';
 import 'package:flutter_app/views/diodemo/DeviceSite.dart';
 import 'package:flutter_app/views/layoutdemo/view_state_widget.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -61,7 +62,19 @@ class DevcieListState extends State<DeviceListPage> {
                   itemCount: model.list.length,
                   itemBuilder: (_, index) {
                     DeviceItem deviceItem = model.list[index];
-                    return Text(deviceItem.currEnterpriseName);
+                    return InkWell(
+                      child: Card(
+                        child: Container(
+                          child: Center(
+                            child: Text(deviceItem.currEnterpriseName),
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        Navigator.of(context)
+                            .pushNamed(RouterName.formtestdemo);
+                      },
+                    );
                   },
                   shrinkWrap: true,
                 ),
