@@ -98,3 +98,8 @@ flutter:
     - assets/images/close.png
     - assets/images/location_white.png
     - assets/images/search.png
+    - assets/images/home_head_icon.png
+    - assets/images/home_early.png
+    - assets/images/home_fault.png
+    - assets/images/home_icon_normal.png
+    - assets/images/home_offline.png

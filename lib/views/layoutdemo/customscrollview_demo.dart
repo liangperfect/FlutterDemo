@@ -25,17 +25,18 @@ class CustomScrollViewState extends State<CustomScrollViewDemo> {
           SliverAppBar(
             backgroundColor: Colors.deepOrange,
             pinned: true,
-            expandedHeight: MediaQuery.of(context).size.height,
+            floating: true,
+            expandedHeight: 50,
             flexibleSpace: FlexibleSpaceBar(
 //              title: Image.asset("assets/images/pic.jpg"),
               title: Text('sliverDemo'),
             ),
           ),
           SliverToBoxAdapter(
-            child:Container(
+            child: Container(
               height: 100,
               color: Colors.cyan,
-            ) ,
+            ),
           ),
           SliverPadding(
             padding: EdgeInsets.all(8.0),
@@ -56,17 +57,17 @@ class CustomScrollViewState extends State<CustomScrollViewDemo> {
               }, childCount: 30),
             ),
           ),
-          SliverFixedExtentList(
-            itemExtent: 30,
-            delegate:
-                SliverChildBuilderDelegate((BuildContext context, int index) {
-              return Container(
-                alignment: Alignment.center,
-                color: Colors.lightBlue[100 * (index % 9)],
-                child: Text('ListView的第$index个item'),
-              );
-            }, childCount: 20),
-          )
+//          SliverFixedExtentList(
+//            itemExtent: 30,
+//            delegate:
+//                SliverChildBuilderDelegate((BuildContext context, int index) {
+//              return Container(
+//                alignment: Alignment.center,
+//                color: Colors.lightBlue[100 * (index % 9)],
+//                child: Text('ListView的第$index个item'),
+//              );
+//            }, childCount: 20),
+//          )
         ],
       ),
     );

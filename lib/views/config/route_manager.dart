@@ -35,10 +35,9 @@ class RouterName {
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-
+      case RouterName.customscrollviewdemo:
+        return MaterialPageRoute(builder: (_) => CustomScrollViewDemo());
       case RouterName.main:
-        return MaterialPageRoute(builder: (_)=>CustomScrollViewDemo());
-      case RouterName.homepagetest:
         return MaterialPageRoute(
             builder: (BuildContext context) => HomePageTestWidget());
       case RouterName.tabviewdemo:
